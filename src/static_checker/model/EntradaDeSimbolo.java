@@ -21,4 +21,38 @@ public class EntradaDeSimbolo {
         this.tipoSimbolo = "";
         this.linhas = linhas;
     }
+
+    public void atualizarEntrada(int linha) {
+        if(this.linhas.size() < 5) {
+            this.linhas.add(linha);
+        }
+    }
+
+    public int getNumeroEntrada() {
+        return numeroEntrada;
+    }
+
+    public String getCodigoAtomo() {
+        return codigoAtomo;
+    }
+
+    public String getLexeme() {
+        return lexeme;
+    }
+
+    public int getQtCharsAntesDeTruncar() {
+        return qtCharsAntesDeTruncar;
+    }
+
+    public int getQtCharsDpsDeTruncar() {
+        return qtCharsDpsDeTruncar;
+    }
+
+    public String getTipoSimbolo() {
+        return tipoSimbolo;
+    }
+
+    public ArrayList<Integer> getLinhas() {
+        return linhas;
+    }
 }
