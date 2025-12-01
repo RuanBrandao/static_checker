@@ -47,11 +47,37 @@ public class StaticChecker {
             escreverCabecalho(writerLex, "RELATÓRIO DA ANÁLISE LÉXICA", nomeBase);
             escreverCabecalho(writerTab, "RELATÓRIO DA TABELA DE SÍMBOLOS", nomeBase);
 
+            String ultimoTipoEncontrado = "";
+
             while (true) {
                 Atomo atomo = lexico.getNextAtom();
 
                 if (atomo.codigo().equals("EOF")) {
                     break;
+                }
+
+                if (atomo.codigo().equals("PRS01")) { // integer
+                    ultimoTipoEncontrado = "IN";
+                }
+
+                else if (atomo.codigo().equals("PRS02")) { // real
+                    ultimoTipoEncontrado = "FP";
+                }
+
+                else if (atomo.codigo().equals("PRS04")) { // string
+                    ultimoTipoEncontrado = "ST";
+                }
+
+                else if (atomo.codigo().equals("PRS03")) { // char
+                    ultimoTipoEncontrado = "CH";
+                }
+
+                else if (atomo.codigo().equals("SRS01")) {
+                    ultimoTipoEncontrado = "";
+                }
+
+                else if (atomo.codigo().equals("IDN02") && !ultimoTipoEncontrado.isEmpty()) {
+                    tabela.setTipoSimbolo(atomo.indice_tabela(), ultimoTipoEncontrado);
                 }
 
                 String linhaLex;

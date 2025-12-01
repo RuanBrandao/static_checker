@@ -42,4 +42,13 @@ public class TabelaDeSimbolos {
     public Collection<EntradaDeSimbolo> getAllEntries() {
         return tabela.values();
     }
+
+    public void setTipoSimbolo(int indice, String novoTipo) {
+        for (EntradaDeSimbolo entrada : tabela.values()) {
+            if (entrada.getNumeroEntrada() == indice) {
+                entrada.setTipoSimbolo(novoTipo);
+                return;
+            }
+        }
+    }
 }
