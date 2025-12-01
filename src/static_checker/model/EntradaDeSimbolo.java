@@ -56,4 +56,8 @@ public class EntradaDeSimbolo {
     public ArrayList<Integer> getLinhas() {
         return linhas;
     }
+
+    public void setTipoSimbolo(String tipoSimbolo) {
+        this.tipoSimbolo = tipoSimbolo;
+    }
 }
