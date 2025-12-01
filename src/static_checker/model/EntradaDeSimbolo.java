@@ -12,13 +12,13 @@ public class EntradaDeSimbolo {
     private String tipoSimbolo;
     private final ArrayList<Integer> linhas;
 
-    public EntradaDeSimbolo(int numeroEntrada, String codigoAtomo, String lexeme, int qtCharsAntesDeTruncar, int qtCharsDpsDeTruncar, int linhaInicial) {
+    public EntradaDeSimbolo(int numeroEntrada, String codigoAtomo, String lexeme, int qtCharsAntesDeTruncar, int qtCharsDpsDeTruncar, int linhaInicial, String tipoSimbolo) {
         this.numeroEntrada = numeroEntrada;
         this.codigoAtomo = codigoAtomo;
         this.lexeme = lexeme;
         this.qtCharsAntesDeTruncar = qtCharsAntesDeTruncar;
         this.qtCharsDpsDeTruncar = qtCharsDpsDeTruncar;
-        this.tipoSimbolo = "";
+        this.tipoSimbolo = tipoSimbolo;
         this.linhas = new ArrayList<>();
         this.linhas.add(linhaInicial);
     }
