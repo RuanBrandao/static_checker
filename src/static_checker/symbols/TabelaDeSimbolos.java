@@ -22,8 +22,15 @@ public class TabelaDeSimbolos {
             return entrada;
         } else {
             int tamanhoDepoisTruncado = lexeme.length();
+            String tipoInicio = "";
+            switch (codigoAtomo) {
+                case "IDN04": tipoInicio = "IN"; break; // Int
+                case "IDN05": tipoInicio = "FP"; break; // Float
+                case "IDN06": tipoInicio = "ST"; break; // String
+                case "IDN07": tipoInicio = "CH"; break; // Char
+            }
             EntradaDeSimbolo novaEntrada = new EntradaDeSimbolo(
-                    proximoIndice, codigoAtomo, lexeme, tamanhoOriginal, tamanhoDepoisTruncado, linha
+                    proximoIndice, codigoAtomo, lexeme, tamanhoOriginal, tamanhoDepoisTruncado, linha, tipoInicio
             );
 
             tabela.put(lexeme, novaEntrada);
